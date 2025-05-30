@@ -22,6 +22,7 @@ import {
   Target,
   Zap,
 } from "lucide-react"
+import { Linkedin } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
@@ -36,7 +37,7 @@ export default function HelixProjectWebsite() {
       title: "Villa Moderna Cancún",
       type: "residencial",
       location: "Cancún, México",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/imagenes/20240709_123113.jpg",
       description: "Residencia de lujo con diseño contemporáneo",
     },
     {
@@ -44,7 +45,7 @@ export default function HelixProjectWebsite() {
       title: "Hotel Boutique Tulum",
       type: "hotelero",
       location: "Tulum, México",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/imagenes/20250111_164425.jpg",
       description: "Desarrollo hotelero sustentable",
     },
     {
@@ -52,7 +53,7 @@ export default function HelixProjectWebsite() {
       title: "Residencia Playa del Carmen",
       type: "residencial",
       location: "Playa del Carmen, México",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/imagenes/20240515_132502.jpg",
       description: "Casa familiar con vista al mar",
     },
     {
@@ -60,7 +61,7 @@ export default function HelixProjectWebsite() {
       title: "Resort Riviera Maya",
       type: "hotelero",
       location: "Riviera Maya, México",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/imagenes/20240704_082810.jpg",
       description: "Complejo hotelero de gran escala",
     },
   ]
@@ -76,9 +77,7 @@ export default function HelixProjectWebsite() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-[#061d1a] rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">H</span>
-              </div>
+              <Image src="/logo.png" alt="Helix Project Logo" width={32} height={32} />
               <span className="text-xl font-bold text-[#061d1a]">Helix Project</span>
             </Link>
 
@@ -139,7 +138,7 @@ export default function HelixProjectWebsite() {
       >
         <div className="absolute inset-0 bg-black/40"></div>
         <Image
-          src="/placeholder.svg?height=1080&width=1920"
+          src="/imagenes/20240724_095109.jpg"
           alt="Construcción moderna"
           fill
           className="object-cover mix-blend-overlay"
@@ -196,7 +195,7 @@ export default function HelixProjectWebsite() {
 
             <div className="relative">
               <Image
-                src="/placeholder.svg?height=600&width=500"
+                src="/imagenes/20240312_123426.jpg"
                 alt="Equipo Helix Project"
                 width={500}
                 height={600}
@@ -366,7 +365,7 @@ export default function HelixProjectWebsite() {
               >
                 <div className="relative overflow-hidden">
                   <Image
-                    src={project.image || "/placeholder.svg"}
+                    src={project.image}
                     alt={project.title}
                     width={400}
                     height={300}
@@ -565,9 +564,7 @@ export default function HelixProjectWebsite() {
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-[#7dc1ae] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">H</span>
-                </div>
+                <Image src="/logo.png" alt="Helix Project Logo" width={32} height={32} className="bg-[#7dc1ae] rounded-lg" />
                 <span className="text-xl font-bold">Helix Project</span>
               </div>
               <p className="text-gray-300 mb-4">
@@ -592,6 +589,10 @@ export default function HelixProjectWebsite() {
                 <p>Cancún, Quintana Roo</p>
                 <p>+52 998 XXX XXXX</p>
                 <p>info@helixproject.mx</p>
+                <a href="https://www.linkedin.com/in/jorge-fern%C3%A1ndez-1990/" target="_blank" rel="noopener noreferrer" title="Arquitecto" className="flex items-center gap-2 mt-2 text-[#0A66C2] hover:text-[#004182] transition-colors">
+                  <Linkedin className="w-6 h-6" />
+                  <span className="text-white">Arquitecto</span>
+                </a>
               </div>
             </div>
           </div>
