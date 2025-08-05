@@ -77,8 +77,14 @@ export default function HelixProjectWebsite() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2">
-              <Image src="/logo.png" alt="Helix Project Logo" width={32} height={32} />
-              <span className="text-xl font-bold text-[#061d1a]">Helix Project</span>
+              <Image 
+                src="/logo.svg" 
+                alt="Helix Project Logo" 
+                width={120} 
+                height={40}
+                className="object-contain"
+                priority
+              />
             </Link>
 
             {/* Desktop Navigation */}
@@ -134,14 +140,14 @@ export default function HelixProjectWebsite() {
       {/* Hero Section */}
       <section
         id="inicio"
-        className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#061d1a] to-[#7dc1ae] text-white"
+        className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-700 text-white"
       >
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
         <Image
-          src="/imagenes/20240724_095109.jpg"
-          alt="Construcción moderna"
+          src="/imagenes/hero_construccion.jpg"
+          alt="Proyecto de construcción Helix"
           fill
-          className="object-cover mix-blend-overlay"
+          className="object-cover mix-blend-soft-light"
         />
         <div className="relative z-10 container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
@@ -149,23 +155,41 @@ export default function HelixProjectWebsite() {
             <br />
             <span className="text-[#c3dbb9]">PROPÓSITO</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
-            Gestión Técnica de Construcción de Alto Nivel
+          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed font-semibold">
+            Nuestro compromiso profesional asegura resultados.
             <br />
-            <span className="text-[#c3dbb9]">Experiencia europea aplicada en la Riviera Maya</span>
+            <span className="text-[#c3dbb9]">Nuestra experiencia nos avala.</span>
           </p>
-          <Button size="lg" className="bg-[#061d1a] hover:bg-[#061d1a]/90 text-white px-8 py-4 text-lg rounded-full">
-            Conoce nuestros servicios
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
+          
+          <div className="max-w-5xl mx-auto mb-10">
+            <div className="text-lg md:text-xl leading-relaxed text-white/90 space-y-6 text-center">
+              <p>
+                Nos especializamos en la gestión integral de proyectos exclusivos de construcción en la Riviera Maya. 
+                <span className="text-[#c3dbb9] font-medium"> Te acompañamos durante todo el proceso, sea cual sea el reto.</span>
+              </p>
+              <p>
+                Conformado por un equipo mixto con <span className="text-[#c3dbb9] font-medium">experiencia europea y mexicana</span> en proyectos del más alto nivel.
+              </p>
+              <p>
+                Ejecutamos cada proyecto con precisión y un <span className="text-[#c3dbb9] font-medium">enfoque centrado en tus objetivos.</span>
+              </p>
+            </div>
+          </div>
+
+          <Link href="#servicios">
+            <Button size="lg" className="bg-[#061d1a] hover:bg-[#061d1a]/90 text-white px-8 py-4 text-lg rounded-full">
+              Conoce nuestros servicios
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </Link>
         </div>
       </section>
 
       {/* Nosotros Section */}
       <section id="nosotros" className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 xl:gap-20 items-center">
+            <div className="lg:pr-8">
               <h2 className="text-4xl md:text-5xl font-bold text-[#061d1a] mb-6">
                 Experiencia Internacional,
                 <br />
@@ -193,13 +217,13 @@ export default function HelixProjectWebsite() {
               </div>
             </div>
 
-            <div className="relative">
+            <div className="relative lg:pl-8">
               <Image
-                src="/imagenes/20240312_123426.jpg"
-                alt="Equipo Helix Project"
+                src="/imagenes/equipo_construccion.webp"
+                alt="Equipo Helix Project en obra"
                 width={500}
                 height={600}
-                className="rounded-2xl shadow-2xl"
+                className="rounded-2xl shadow-2xl w-full h-auto"
               />
             </div>
           </div>
@@ -443,117 +467,43 @@ export default function HelixProjectWebsite() {
 
       {/* Contacto Section */}
       <section id="contacto" className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-[#061d1a] mb-6">
-                Hablemos de tu
-                <br />
-                <span className="text-[#7dc1ae]">próximo proyecto</span>
-              </h2>
-              <p className="text-lg text-[#737b78] mb-8">
-                Solicita tu consulta gratuita y descubre cómo podemos hacer realidad tu proyecto con los más altos
-                estándares de calidad.
-              </p>
+        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#061d1a] mb-6">
+              Hablemos de tu
+              <br />
+              <span className="text-[#7dc1ae]">próximo proyecto</span>
+            </h2>
+            <p className="text-lg text-[#737b78] mb-12 max-w-2xl mx-auto">
+              Solicita tu consulta gratuita y descubre cómo podemos hacer realidad tu proyecto con los más altos
+              estándares de calidad.
+            </p>
 
-              <div className="space-y-6">
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-[#c3dbb9] rounded-lg flex items-center justify-center mr-4">
-                    <MapPin className="w-6 h-6 text-[#061d1a]" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-[#061d1a]">Ubicación</h4>
-                    <p className="text-[#737b78]">Cancún, Quintana Roo, México</p>
-                  </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 bg-[#c3dbb9] rounded-xl flex items-center justify-center mb-4">
+                  <MapPin className="w-8 h-8 text-[#061d1a]" />
                 </div>
+                <h4 className="font-semibold text-[#061d1a] mb-2">Ubicación</h4>
+                <p className="text-[#737b78]">Cancún, Quintana Roo, México</p>
+              </div>
 
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-[#c3dbb9] rounded-lg flex items-center justify-center mr-4">
-                    <Phone className="w-6 h-6 text-[#061d1a]" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-[#061d1a]">Teléfono</h4>
-                    <p className="text-[#737b78]">+52 998 XXX XXXX</p>
-                  </div>
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 bg-[#c3dbb9] rounded-xl flex items-center justify-center mb-4">
+                  <Phone className="w-8 h-8 text-[#061d1a]" />
                 </div>
+                <h4 className="font-semibold text-[#061d1a] mb-2">Teléfono</h4>
+                <p className="text-[#737b78]">+52 998 398 5350</p>
+              </div>
 
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-[#c3dbb9] rounded-lg flex items-center justify-center mr-4">
-                    <Mail className="w-6 h-6 text-[#061d1a]" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-[#061d1a]">Email</h4>
-                    <p className="text-[#737b78]">info@helixproject.mx</p>
-                  </div>
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 bg-[#c3dbb9] rounded-xl flex items-center justify-center mb-4">
+                  <Mail className="w-8 h-8 text-[#061d1a]" />
                 </div>
+                <h4 className="font-semibold text-[#061d1a] mb-2">Email</h4>
+                <p className="text-[#737b78]">jorgefzmz@gmail.com</p>
               </div>
             </div>
-
-            <Card className="p-8 border-0 shadow-lg">
-              <CardContent className="p-0">
-                <h3 className="text-2xl font-bold text-[#061d1a] mb-6">Solicita tu consulta gratuita</h3>
-                <form className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-[#737b78] mb-2">Nombre</label>
-                      <Input
-                        placeholder="Tu nombre"
-                        className="border-gray-300 focus:border-[#7dc1ae] focus:ring-[#7dc1ae]"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-[#737b78] mb-2">Apellido</label>
-                      <Input
-                        placeholder="Tu apellido"
-                        className="border-gray-300 focus:border-[#7dc1ae] focus:ring-[#7dc1ae]"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-[#737b78] mb-2">Email</label>
-                    <Input
-                      type="email"
-                      placeholder="tu@email.com"
-                      className="border-gray-300 focus:border-[#7dc1ae] focus:ring-[#7dc1ae]"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-[#737b78] mb-2">Teléfono</label>
-                    <Input
-                      placeholder="+52 998 XXX XXXX"
-                      className="border-gray-300 focus:border-[#7dc1ae] focus:ring-[#7dc1ae]"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-[#737b78] mb-2">Tipo de proyecto</label>
-                    <select className="w-full p-3 border border-gray-300 rounded-md focus:border-[#7dc1ae] focus:ring-[#7dc1ae]">
-                      <option>Selecciona una opción</option>
-                      <option>Residencial</option>
-                      <option>Hotelero</option>
-                      <option>Comercial</option>
-                      <option>Otro</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-[#737b78] mb-2">Mensaje</label>
-                    <Textarea
-                      placeholder="Cuéntanos sobre tu proyecto..."
-                      rows={4}
-                      className="border-gray-300 focus:border-[#7dc1ae] focus:ring-[#7dc1ae]"
-                    />
-                  </div>
-
-                  <Button type="submit" className="w-full bg-[#061d1a] hover:bg-[#061d1a]/90 text-white py-3">
-                    Enviar consulta
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
@@ -563,11 +513,16 @@ export default function HelixProjectWebsite() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <Image src="/logo.png" alt="Helix Project Logo" width={32} height={32} className="bg-[#7dc1ae] rounded-lg" />
-                <span className="text-xl font-bold">Helix Project</span>
+              <div className="bg-[#7dc1ae]/10 backdrop-blur-sm rounded-xl p-4 mb-6 border border-[#7dc1ae]/20">
+                <Image 
+                  src="/logo.svg" 
+                  alt="Helix Project Logo" 
+                  width={120} 
+                  height={39} 
+                  className="object-contain filter brightness-0 invert"
+                />
               </div>
-              <p className="text-gray-300 mb-4">
+              <p className="text-gray-300 mb-4 leading-relaxed">
                 Gestión técnica de construcción de alto nivel con experiencia internacional y expertise local en la
                 Riviera Maya.
               </p>
@@ -587,8 +542,8 @@ export default function HelixProjectWebsite() {
               <h4 className="text-lg font-semibold mb-4">Contacto</h4>
               <div className="space-y-2 text-gray-300">
                 <p>Cancún, Quintana Roo</p>
-                <p>+52 998 XXX XXXX</p>
-                <p>info@helixproject.mx</p>
+                <p>+52 998 398 5350</p>
+                <p>jorgefzmz@gmail.com</p>
                 <a href="https://www.linkedin.com/in/jorge-fern%C3%A1ndez-1990/" target="_blank" rel="noopener noreferrer" title="Arquitecto" className="flex items-center gap-2 mt-2 text-[#0A66C2] hover:text-[#004182] transition-colors">
                   <Linkedin className="w-6 h-6" />
                   <span className="text-white">Arquitecto</span>
