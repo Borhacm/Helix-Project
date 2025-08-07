@@ -34,35 +34,59 @@ export default function HelixProjectWebsite() {
   const projects = [
     {
       id: 1,
-      title: "Villa Moderna Cancún",
-      type: "residencial",
-      location: "Cancún, México",
+      title: "Edificio Comercial Madrid",
+      type: "consultoria",
+      location: "Madrid, España",
       image: "/imagenes/20240709_123113.jpg",
-      description: "Residencia de lujo con diseño contemporáneo",
+      description: "Apoyo en la gestión y consultoría técnica en la construcción de moderno edificio comercial y de oficinas",
     },
     {
       id: 2,
       title: "Hotel Boutique Tulum",
       type: "hotelero",
       location: "Tulum, México",
-      image: "/imagenes/20250111_164425.jpg",
+      image: "/imagenes/hotel_tulum_nuevo.jpg",
       description: "Desarrollo hotelero sustentable",
     },
     {
       id: 3,
-      title: "Residencia Playa del Carmen",
+      title: "Residencial de lujo en Madrid",
       type: "residencial",
-      location: "Playa del Carmen, México",
-      image: "/imagenes/20240515_132502.jpg",
-      description: "Casa familiar con vista al mar",
+      location: "Madrid, España",
+      image: "/imagenes/residencial_madrid.jpg",
+      description: "Casa familiar con los mejores materiales y acabados en urbanización de lujo",
     },
     {
       id: 4,
       title: "Resort Riviera Maya",
       type: "hotelero",
       location: "Riviera Maya, México",
-      image: "/imagenes/20240704_082810.jpg",
+      image: "/imagenes/resort_riviera_maya_nuevo.jpg",
       description: "Complejo hotelero de gran escala",
+    },
+    {
+      id: 5,
+      title: "Hospital Gregorio Marañón",
+      type: "consultoria_tecnica",
+      location: "Madrid, España",
+      image: "/imagenes/hospital_gregorio_maranon.jpg",
+      description: "Consultoría para asegurar la calidad técnica de importante hospital español",
+    },
+    {
+      id: 6,
+      title: "Centro Oncológico",
+      type: "consultoria_tecnica",
+      location: "Madrid, España",
+      image: "/imagenes/centro_oncologico.jpg",
+      description: "Consultoría para asegurar la calidad técnica de importante centro oncológico español",
+    },
+    {
+      id: 7,
+      title: "Centro Logístico Inditex",
+      type: "consultoria_tecnica",
+      location: "Rotterdam, Holanda",
+      image: "/imagenes/centro_logistico_inditex.jpg",
+      description: "Consultoría técnica del primer centro logístico de Inditex en Holanda",
     },
   ]
 
@@ -368,6 +392,17 @@ export default function HelixProjectWebsite() {
                 Residencial
               </Button>
               <Button
+                variant={selectedFilter === "consultoria" ? "default" : "outline"}
+                onClick={() => setSelectedFilter("consultoria")}
+                className={
+                  selectedFilter === "consultoria"
+                    ? "bg-[#061d1a] hover:bg-[#061d1a]/90"
+                    : "border-[#061d1a] text-[#061d1a] hover:bg-[#061d1a] hover:text-white"
+                }
+              >
+                Gerencia de Obra
+              </Button>
+              <Button
                 variant={selectedFilter === "hotelero" ? "default" : "outline"}
                 onClick={() => setSelectedFilter("hotelero")}
                 className={
@@ -377,6 +412,17 @@ export default function HelixProjectWebsite() {
                 }
               >
                 Hotelero
+              </Button>
+              <Button
+                variant={selectedFilter === "consultoria_tecnica" ? "default" : "outline"}
+                onClick={() => setSelectedFilter("consultoria_tecnica")}
+                className={
+                  selectedFilter === "consultoria_tecnica"
+                    ? "bg-[#061d1a] hover:bg-[#061d1a]/90"
+                    : "border-[#061d1a] text-[#061d1a] hover:bg-[#061d1a] hover:text-white"
+                }
+              >
+                Consultoría Técnica
               </Button>
             </div>
           </div>
@@ -397,10 +443,22 @@ export default function HelixProjectWebsite() {
                   />
                   <Badge
                     className={`absolute top-4 left-4 ${
-                      project.type === "residencial" ? "bg-[#c3dbb9] text-[#061d1a]" : "bg-[#7dc1ae] text-white"
+                      project.type === "consultoria" 
+                        ? "bg-[#c3dbb9] text-[#061d1a]" 
+                        : project.type === "hotelero" 
+                        ? "bg-[#7dc1ae] text-white" 
+                        : project.type === "consultoria_tecnica"
+                        ? "bg-[#9ca3af] text-white"
+                        : "bg-[#a8b5b0] text-white"
                     }`}
                   >
-                    {project.type === "residencial" ? "Residencial" : "Hotelero"}
+                    {project.type === "consultoria" 
+                      ? "Gerencia de Obra" 
+                      : project.type === "hotelero" 
+                      ? "Hotelero" 
+                      : project.type === "consultoria_tecnica"
+                      ? "Consultoría Técnica"
+                      : "Residencial"}
                   </Badge>
                 </div>
                 <CardContent className="p-6">
